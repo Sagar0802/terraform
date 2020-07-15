@@ -13,11 +13,10 @@ module "my_vpc" {
 }
 
 module "ec2" {
-  source = "../modules/instance"
-  ami = 
+  source = "../modules/instance" 
   instance_type = "t2.micro"
   instance_name = "my_instance"
-  count = "1"
+  inst_count = "1"
   subnet_id = "${module.my_vpc.subnet_id}"
   
 }
